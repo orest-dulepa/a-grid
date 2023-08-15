@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "target": "es2018",
+    "baseUrl": "."
+  },
+  "compileOnSave": true,
+  "include": ["src", "types"]
+}

@@ -1,0 +1,56 @@
+@import 'variables';
+@import 'colors';
+
+input:not(.slider) {
+    outline: none;
+    background-color: $white;
+    border: 1px solid $grey-2;
+    box-sizing: border-box;
+    border-radius: 6px;
+    width: 100%;
+    color: $dark-grey-4;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+
+    height: 48px;
+    padding: 0 16px;
+
+    transition: all $tt-default;
+
+    &::placeholder {
+        color: $grey-6;
+    }
+
+    &:hover {
+        border-color: $grey-6;
+    }
+
+    &:focus, &:active {
+        border-color: $electric-blue;
+    }
+
+    &:disabled {
+        background-color: $dark-grey-7;
+
+        &:hover {
+            border-color: $grey-2;
+        }
+    }
+
+    &.invalid {
+        border-color: $error;
+    }
+
+    &.forgot {
+        padding-right: 100px;
+
+        & + .forgot-link {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 20px;
+        }
+    }
+}

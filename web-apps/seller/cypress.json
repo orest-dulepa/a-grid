@@ -1,0 +1,8 @@
+{
+  "pluginsFile": "tests/e2e/plugins/index.js",
+  "env": {
+    "BASE_URL": "http://localhost:8080",
+    "LOGIN": "demo@agrid.io",
+    "PASSWORD": "demopassword"
+  }
+}

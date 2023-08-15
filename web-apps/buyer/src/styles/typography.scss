@@ -1,0 +1,66 @@
+@import 'colors';
+
+$h1-max_font-size: 74px;
+$h1-max_line-height: 68px;
+
+$h1-reg_font-size: 56px;
+$h1-reg_line-height: 68px;
+
+$h2-max_font-size: 48px;
+$h2-max_line-height: 56px;
+
+$h2-reg_font-size: 40px;
+$h2-reg_line-height: 48px;
+
+$h2-small_font-size: 32px;
+$h2-small_line-height: 40px;
+
+$h3-reg_font-size: 18px;
+$h3-reg_line-height: 22px;
+
+$p-max_font-size: 22px;
+$p-max_line-height: 34px;
+
+$p-reg_font-size: 14px;
+$p-reg_line-height: 20px;
+
+$link-large_font-size: 24px;
+$link-large_line-height: 36px;
+
+$link-max_font-size: 18px;
+$link-max_line-height: 18px;
+
+$link-reg_font-size: 16px;
+$link-reg_line-height: 16px;
+
+h1, h2 {
+    margin: 0;
+    font-weight: bold;
+    color: $dark-grey-4;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 48px;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 26px;
+}
+
+p {
+    margin: 0;
+    line-height: 20px;
+    color: $dark-grey-1;
+
+    &.large {
+        font-size: 22px;
+        line-height: 34px;
+    }
+
+    &.small {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}

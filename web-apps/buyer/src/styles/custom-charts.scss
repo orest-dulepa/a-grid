@@ -1,0 +1,401 @@
+@import 'colors';
+
+$electric-chart-main-color: $electric-blue;
+$electric-chart-main-color-gradient: #4170ff;
+$electric-markers-color: #3767fb;
+
+$chart-main-color: #394873;
+$chart-main-color-gradient: #2a3860;
+
+$highcharts-axis-line-color: #ccd6eb;
+
+$padding_h: 96px;
+$padding_v: 64px;
+
+@mixin highchartsColor($color) {
+  fill: $color;
+  stroke: $color;
+  color: $color;
+}
+
+.custom-chart {
+  .highcharts-container {
+    font-family: inherit;
+    border-radius: 20px;
+  }
+
+  .highcharts-background {
+    fill: none;
+  }
+
+  .highcharts-xaxis .highcharts-axis-line,
+  .highcharts-yaxis-grid .highcharts-grid-line {
+    stroke: rgba(255, 255, 255, 0.2);
+    stroke-width: 1;
+    stroke-dasharray: 10, 9;
+  }
+
+  .highcharts-axis-labels {
+    fill: $white;
+    opacity: 0.6;
+
+    text {
+      fill: $white;
+    }
+  }
+
+  .highcharts-spline-series .highcharts-point,
+  .highcharts-line-series .highcharts-point {
+    fill: none;
+    stroke: none;
+  }
+
+  .highcharts-spline-series .highcharts-graph,
+  .highcharts-line-series .highcharts-graph {
+    stroke-width: 3px;
+  }
+
+  .highcharts-markers {
+    fill: $white;
+  }
+
+  .highcharts-xaxis-labels {
+    font-size: 12px;
+  }
+
+  .highcharts-axis-line {
+    stroke: $highcharts-axis-line-color;
+  }
+
+  .highcharts-legend-item,
+  .highcharts-axis-labels,
+  .highcharts-axis-title {
+    fill: rgba(255, 255, 255, 0.6);
+  }
+
+  svg .highcharts-tooltip {
+    display: none;
+  }
+
+  .highcharts-tooltip__container {
+    position: relative;
+    right: 0;
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 16px 32px 16px 16px;
+  }
+
+  .highcharts-tooltip-box {
+    fill: $white;
+    fill-opacity: 1;
+    stroke-width: 0;
+  }
+
+  .highcharts-tooltip .highcharts-tooltip__bullet {
+    width: 8px;
+    height: 8px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .highcharts-tooltip .highcharts-tooltip__series {
+    display: flex;
+    flex-direction: row;
+    margin-top: 12px;
+  }
+
+  .highcharts-tooltip .highcharts-tooltip__series-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .highcharts-tooltip .highcharts-tooltip__container {
+    box-sizing: border-box;
+    min-width: 118px;
+  }
+
+  .highcharts-tooltip .highcharts-tooltip__x {
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+
+  .highcharts-tooltip .highcharts-tooltip__x,
+  .highcharts-tooltip .highcharts-tooltip__series-name {
+    color: $dark-grey-1;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .highcharts-tooltip .highcharts-tooltip__series-value {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: $dark-grey-4;
+    margin-bottom: 4px;
+  }
+
+  .highcharts-plot-band {
+    fill-opacity: 0.08;
+  }
+
+  .highcharts-halo {
+    fill-opacity: 1;
+  }
+
+  .highcharts-plot-line {
+    fill: none;
+    stroke: $white;
+    stroke-width: 3px;
+  }
+}
+
+.custom-chart {
+  box-sizing: border-box;
+  padding: $padding_v $padding_h;
+  border-radius: 20px;
+  background: linear-gradient(
+    145.04deg,
+    $chart-main-color-gradient 0%,
+    $chart-main-color 69.29%
+  );
+
+  &.custom-chart--electric {
+    background: linear-gradient(
+      145.04deg,
+      $electric-chart-main-color-gradient 0%,
+      $electric-chart-main-color 69.29%
+    );
+
+    .highcharts-markers {
+      fill: $electric-markers-color;
+    }
+  }
+
+  &.custom-chart--white {
+    background: $white;
+
+    .highcharts-markers {
+      fill: $electric-markers-color;
+    }
+
+    .chart-header {
+      display: block;
+      margin-bottom: 48px;
+
+      .chart-header__title {
+        .heading-2 {
+          color: $dark-grey-4;
+        }
+
+        .paragraph-large {
+          margin: 0;
+          color: $dark-grey-4;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .chart {
+    height: 261px;
+  }
+
+  .chart-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 56px;
+
+    .chart-header__title {
+      .heading-2 {
+        color: $white;
+      }
+
+      .paragraph-large {
+        margin: 0;
+        color: $white;
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.feature-chart {
+  position: relative;
+
+  .highcharts-tooltip .highcharts-tooltip__bullet {
+    display: none;
+  }
+
+  .highcharts-color-0 {
+    fill: $white;
+    stroke: $white;
+    color: $white;
+  }
+}
+
+.audiences-chart {
+  .highcharts-color-0 {
+    fill: $purple;
+    stroke: $purple;
+    color: $purple;
+  }
+
+  .highcharts-color-1 {
+    fill: $orange;
+    stroke: $orange;
+    color: $orange;
+  }
+
+  .highcharts-markers path:not(.highcharts-halo) {
+    fill: $white;
+  }
+
+  .highcharts-tooltip {
+    padding: 16px;
+  }
+
+  .highcharts-tooltip .highcharts-tooltip__series-text {
+    margin-left: 8px;
+  }
+
+  .highcharts-plot-line {
+    fill: none;
+    stroke: $purple;
+    stroke-width: 3px;
+  }
+}
+
+.overview-chart {
+  padding: $padding_v $padding_v;
+
+  .highcharts-tooltip__container {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+  }
+
+  .highcharts-axis-labels text {
+    fill: rgba($dark-grey-1, 0.8);
+  }
+
+  .highcharts-xaxis .highcharts-axis-line,
+  .highcharts-yaxis-grid .highcharts-grid-line {
+    stroke: rgba($black, 0.10);
+  }
+
+  .highcharts-color-0 {
+    fill: $purple;
+    stroke: $purple;
+    color: $purple;
+  }
+
+  .highcharts-color-1 {
+    fill: $orange;
+    stroke: $orange;
+    color: $orange;
+  }
+
+  .highcharts-color-2 {
+    fill: $electric-blue;
+    stroke: $electric-blue;
+    color: $electric-blue;
+  }
+
+  .highcharts-color-3 {
+    fill: $pink;
+    stroke: $pink;
+    color: $pink;
+  }
+
+  .highcharts-color-4 {
+    fill: $green;
+    stroke: $green;
+    color: $green;
+  }
+
+  .highcharts-color-5 {
+    fill: $turquoise;
+    stroke: $turquoise;
+    color: $turquoise;
+  }
+
+  .highcharts-markers path:not(.highcharts-halo) {
+    fill: $white;
+  }
+
+  .highcharts-tooltip {
+    padding: 16px;
+  }
+
+  .highcharts-tooltip .highcharts-tooltip__series-text {
+    margin-left: 8px;
+  }
+
+  .highcharts-plot-line {
+    fill: none;
+    stroke: $purple;
+    stroke-width: 3px;
+  }
+
+  .highcharts-plot-band {
+    fill-opacity: 0.05;
+  }
+
+  .highcharts-credits {
+    display: none;
+  }
+}
+
+.analytics-chart {
+  .highcharts-grid-line {
+    display: none;
+  }
+  .highcharts-axis-line {
+    stroke: $grey-10;
+  }
+
+  .highcharts-color-0 {
+    @include highchartsColor($purple);
+  }
+  .highcharts-color-1 {
+    @include highchartsColor($orange);
+  }
+
+  &.chart-columns {
+    .highcharts-color-0 {
+      @include highchartsColor(rgba($electric-blue, 0.1));
+    }
+    .highcharts-color-1 {
+      @include highchartsColor(rgba($electric-blue, 0.15));
+    }
+    .highcharts-color-2 {
+      @include highchartsColor(rgba($electric-blue, 0.2));
+    }
+    .highcharts-color-3 {
+      @include highchartsColor(rgba($electric-blue, 0.25));
+    }
+    .highcharts-color-4 {
+      @include highchartsColor(rgba($electric-blue, 0.3));
+    }
+    .highcharts-color-5 {
+      @include highchartsColor(rgba($electric-blue, 0.4));
+    }
+    .highcharts-color-6 {
+      @include highchartsColor(rgba($electric-blue, 0.45));
+    }
+    .highcharts-color-7 {
+      @include highchartsColor(rgba($electric-blue, 0.5));
+    }
+    .highcharts-color-8 {
+      @include highchartsColor(rgba($electric-blue, 0.55));
+    }
+    .highcharts-color-9 {
+      @include highchartsColor(rgba($electric-blue, 0.55));
+    }
+  }
+}

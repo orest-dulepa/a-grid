@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "ag-edgekit-dev",
+    "production": "ag-edgekit-prod"
+  }
+}

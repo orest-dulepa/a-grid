@@ -1,0 +1,20 @@
+@mixin appBg($color) {
+    .app {
+        background-color: $color;
+    }
+}
+@mixin inputBg($color) {
+    input, textarea {
+        background-color: $color !important;
+    }
+}
+
+body {
+    &.authlayout {
+        @include appBg($grey-17);
+        @include inputBg($grey-17);
+    }
+    &.mainlayout {
+        @include appBg($clr-app-background);
+    }
+}

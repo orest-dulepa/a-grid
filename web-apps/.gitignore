@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+functions/*.log
+.idea/
+tests/e2e/screenshots
+tests/e2e/videos
+.eslintcache
+*.log
+dist/

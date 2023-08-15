@@ -1,0 +1,100 @@
+/* * * * * *
+ * Heading *
+ * * * * * */
+
+.heading-1 {
+  font-size: 56px;
+  font-weight: bold;
+  color: $dark-grey-4;
+  line-height: 68px;
+  margin: 0;
+}
+
+.heading-1.heading-1__max {
+  font-size: 74px;
+}
+
+.heading-2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: $dark-grey-4;
+  line-height: 48px;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.heading-2.heading-2__max {
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.heading-3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: $dark-grey-4;
+  line-height: 22px;
+  margin: 0;
+}
+
+/* * * * * * *
+ * Paragraph *
+ * * * * * * */
+
+.paragraph-large {
+  font-size: 22px;
+  color: $dark-grey-3;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+}
+
+.paragraph-small {
+  font-size: 14px;
+  color: $dark-grey-2;
+  line-height: 20px;
+}
+
+/* * * * *
+ * Link  *
+ * * * * */
+
+$electric-blue-2: #416df6; // TODO: double check color
+
+.link-large {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: $dark-grey-4;
+  text-decoration: none;
+
+  &:hover {
+    color: $electric-blue-2;
+  }
+}
+
+.link-max {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  color: $dark-grey-4;
+  text-decoration: none;
+
+  &:hover {
+    color: $electric-blue;
+  }
+}
+
+.link {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  color: $dark-grey-4;
+  text-decoration: none;
+  transition: color 0.1s linear;
+
+  &:hover {
+    color: $electric-blue;
+  }
+}

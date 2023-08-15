@@ -1,0 +1,92 @@
+/* * * * * *
+ * Colors  *
+ * * * * * */
+
+/* Primary */
+$electric-blue: #2c5ef6;
+$blue-light: #e6ecfe;
+$light-blue: #dfe7fe;
+$dark-blue: #394873;
+$purple: #bd69ff;
+$orange: #ffae73;
+$green: #0ddf48;
+$pink: #ec5586;
+$turquoise: #56eef4;
+
+/* Typography */
+$black: #000000;
+$dark-grey-8: #f9f9fc;
+$dark-grey-7: #f5f5f7;
+$dark-grey-6: #979797;
+$dark-grey-5: #6c6c6c;
+$dark-grey-4: #171717;
+$dark-grey-3: #333333;
+$dark-grey-2: #505050;
+$dark-grey-1: #666666;
+$grey-8: #e8e8e8;
+$grey-7: #c6c6c6;
+$grey-6: #c5c5cf;
+$grey-5: #a8a8a8;
+$grey-4: #eaeaef;
+$grey-3: #d1d1d1;
+$grey-2: #d6d6d6;
+$grey-1: #dadae2;
+$light-grey-1: #f4f4f4;
+$white: #ffffff;
+$empty-box-color: #efeff3;
+
+/* Notifications */
+$success: #1fd151;
+$error: #e84141;
+$warning: #f39958;
+
+/* * * * * *
+ * Sizes  *
+ * * * * * */
+
+// Using CSS variables here we become be able to change them on mobile just
+// using media properties. SCSS variables are static so we would have to define,
+// for example, $navbar-desktop, $navbar-tablet and so on - it's is hard to support.
+:root {
+  --global-navbar-height: 72px;
+  --global-subnavbar-height: 48px;
+  --global-notification-height: 48px;
+  --global-bottom-spacing: 96px;
+}
+
+/* * * * * * *
+ * Z Indexes *
+ * * * * * * */
+
+$z-logo: 100;
+$z-dropdown: 90;
+$z-overlay: 80;
+$z-popover: 60;
+$z-negative: -10;
+
+/* * * * * * * *
+ * Scale Sizes *
+ * * * * * * * */
+
+$breakpoint-big-tablet: 1218px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 425px;
+$breakpoint-small-mobile: 350px;
+$scale-tablet: 0.8;
+$scale-mobile: 0.4;
+$scale-dashboard-big-tablet: 0.5;
+$scale-dashboard-tablet: 0.33333333333;
+$scale-dashboard-mobile: 0.25;
+$scale-width-tablet: 125vw;
+$scale-width-mobile: 250vw;
+$scale-width-dashboard-big-tablet: 200vw;
+$scale-width-dashboard-tablet: 300vw;
+$scale-width-dashboard-mobile: 400vw;
+
+/* * * * * * * * * *
+ * Transition time *
+ * * * * * * * * * */
+
+$tt-default: 0.2s;
+
+

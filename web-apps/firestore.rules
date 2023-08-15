@@ -1,0 +1,61 @@
+/**********************************************************************/
+/*           ATTENTION: do NOT modify this from the web UI!           */
+/*           ----------------------------------------------           */
+/*                                                                    */
+/* These rules get deployed from the contents of firestore.rules,     */
+/* overwriting whatever's currently in the web UI. Change them there. */
+/*                                                                    */
+/**********************************************************************/
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function accountIdDoesntChange() {
+      return request.auth.uid != null && request.resource.data.accountId == resource.data.accountId;
+    }
+
+    function getUserAccountId() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.accountId;
+    }
+
+    function isBuyer(accountId) {
+      return get(/databases/$(database)/documents/accounts/$(accountId)).data.isBuyer;
+    }
+
+    function isSeller(accountId) {
+      return get(/databases/$(database)/documents/accounts/$(accountId)).data.isSeller;
+    }
+
+    function userBelongsToAccount(accountId) {
+      return request.auth.uid != null &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.accountId == accountId;
+    }
+
+    function userCanAccessAudienceData(audience) {
+      let accountId = getUserAccountId();
+      return isSeller(accountId)
+          || (isBuyer(accountId) && (accountId == audience.owner || audience.owner == 'platform'))
+          || audience.type == 'IAB'
+    }
+
+    match /accounts/{accountId} {
+      allow create: if false;
+      allow read: if request.auth.uid != null;
+      allow update: if userBelongsToAccount(accountId);
+    }
+
+    match /users/{userId} {
+      allow create: if false;
+      allow read: if request.auth.uid != null && userId == request.auth.uid;
+      allow update: if accountIdDoesntChange();
+    }
+
+    match /audiences/{audience} {
+      allow create: if false;
+      allow update: if request.auth.uid != null
+        && userCanAccessAudienceData(resource.data);
+      allow read: if request.auth.uid != null
+        && userCanAccessAudienceData(resource.data);
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import 'variables';
+@import 'colors';
+
+button {
+    cursor: pointer;
+    height: 48px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: $white;
+    border: none;
+    padding: 0 40px;
+    background-color: $dark-grey-4;
+    transition: all $tt-default;
+
+    &[full-width] {
+        width: 100%;
+    }
+
+    &[primary] {
+        background-color: $electric-blue;
+    }
+
+    &[disabled] {
+        background-color: $grey-2;
+    }
+
+    &[transparent] {
+        background-color: transparent;
+        color: $dark-grey-1;
+        height: fit-content;
+        max-width: fit-content;
+        padding: 0;
+
+        a {
+            text-decoration: none;
+            color: $dark-grey-1;
+        }
+    }
+}

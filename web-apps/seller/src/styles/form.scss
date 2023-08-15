@@ -1,0 +1,185 @@
+/* * * * * *
+ * Buttons *
+ * * * * * */
+$blue-outlined: #95aefa;
+
+.button {
+  height: 48px;
+  padding: 16px 32px;
+
+  box-sizing: border-box;
+
+  background: $dark-grey-4;
+  color: $white;
+  border-radius: 6px;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  outline: none;
+
+  transition: 0.3s;
+
+  &:not([disabled]) {
+    cursor: pointer;
+  }
+
+  &:not([disabled]):hover {
+    background: $electric-blue;
+  }
+
+  &:disabled {
+    background: $grey-3;
+  }
+}
+
+.button.button__large {
+  height: 56px;
+  padding: 20px 32px;
+
+  font-size: 18px;
+  line-height: 16px;
+}
+
+.button.button__success {
+  &::before {
+    content: '􀆅 ';
+    margin-right: 0.5em;
+  }
+
+  background: $success;
+  color: $white;
+}
+
+/* * * * *
+ * Input *
+ * * * * */
+
+.input {
+  width: 464px;
+  height: 48px;
+  padding: 16px;
+
+  background: $white;
+  box-sizing: border-box;
+  border-radius: 6px;
+  outline: none;
+  appearance: none;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 16px;
+
+  color: $dark-grey-4;
+  border: 1px solid $grey-2;
+
+  &:not([disabled]):hover {
+    border: 1px solid $grey-7;
+  }
+
+  &:not([disabled]):focus {
+    border: 1px solid $electric-blue;
+  }
+
+  &:disabled {
+    background: $light-grey-1;
+  }
+
+  &:invalid,
+  &.invalid {
+    border: 1px solid $error;
+  }
+
+  &::-webkit-input-placeholder {
+    line-height: normal;
+  }
+}
+
+.input + .form-field-info__invalid {
+  display: none;
+}
+
+.input:invalid + .form-field-info__invalid {
+  display: flex;
+}
+
+.input:invalid ~ .form-field-info__hint {
+  display: none;
+}
+
+// Show error styling for required fields only when it's filled in
+:not(.filled) .input[required]:invalid {
+  border: 1px solid $grey-2;
+
+  &:not([disabled]):focus {
+    border: 1px solid $electric-blue;
+  }
+}
+
+.filled .input[required]:invalid {
+  border: 1px solid $error;
+}
+
+.form-field {
+  display: flex;
+  padding: 12px 0;
+}
+
+.form-field-info {
+  color: $grey-5;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 149px;
+  margin-left: 48px;
+  text-decoration: none;
+
+  a {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.5px;
+  }
+}
+
+.form-container {
+  width: 512px;
+  max-width: 100%;
+}
+
+.form-error {
+  color: $error;
+  width: 340px;
+  font-weight: 500;
+}
+
+.form-suggestion {
+  width: 250px;
+}
+
+.input_auth {
+  width: 512px;
+  max-width: 100%;
+  height: 64px;
+  font-size: 18px;
+  padding: 24px;
+}
+
+.form__elem-wide {
+  width: 512px;
+  max-width: 100%;
+}
+
+.submit {
+  margin-top: 28px;
+}
